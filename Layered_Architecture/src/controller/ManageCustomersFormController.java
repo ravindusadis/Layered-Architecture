@@ -40,6 +40,8 @@ public class ManageCustomersFormController {
     public JFXTextField txtCustomerAddress;
     public TableView<CustomerTM> tblCustomers;
     public JFXButton btnAddNewCustomer;
+    //Property Injection (DI)
+    private final CustomerDAO customerDAO = new CustomerDAOImpl();
 
     public void initialize() {
         tblCustomers.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -74,8 +76,6 @@ public class ManageCustomersFormController {
         try {
 
             //Loos Coupling
-            //No DI
-            CustomerDAO customerDAO = new CustomerDAOImpl();
             ArrayList<CustomerDTO> allCustomers = customerDAO.getAllCustomers();
 
 
@@ -153,9 +153,6 @@ public class ManageCustomersFormController {
                 }
 
                 //Loos Coupling
-                //No DI
-                //Boilerplate Code
-                CustomerDAO customerDAO = new CustomerDAOImpl();
                 customerDAO.saveCustomer(new CustomerDTO(id, name, address));
 
                 tblCustomers.getItems().add(new CustomerTM(id, name, address));
@@ -175,9 +172,6 @@ public class ManageCustomersFormController {
 
                 //Customer update
                 //Loos Coupling
-                //No DI
-                //Boilerplate Code
-                CustomerDAO customerDAO  = new CustomerDAOImpl();
                 customerDAO.updateCustomer(new CustomerDTO(id, name, address));
 
 
@@ -198,7 +192,6 @@ public class ManageCustomersFormController {
 
 
     boolean existCustomer(String id) throws SQLException, ClassNotFoundException {
-        CustomerDAO customerDAO  = new CustomerDAOImpl();
         return customerDAO.existCustomer(id);
     }
 
@@ -212,9 +205,6 @@ public class ManageCustomersFormController {
             }
 
             //Loos Coupling
-            //No DI
-            //Boilerplate Code
-            CustomerDAO customerDAO = new CustomerDAOImpl();
             customerDAO.deleteCustomer(id);
 
             tblCustomers.getItems().remove(tblCustomers.getSelectionModel().getSelectedItem());
@@ -232,9 +222,6 @@ public class ManageCustomersFormController {
         try {
 
             //Loos Coupling
-            //No DI
-            //Boilerplate Code
-            CustomerDAO customerDAO  = new CustomerDAOImpl();
             return customerDAO.generateNewID();
 
         } catch (SQLException e) {
