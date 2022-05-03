@@ -152,7 +152,7 @@ public class ManageCustomersFormController {
                     new Alert(Alert.AlertType.ERROR, id + " already exists").show();
                 }
 
-                //Tight Coupling
+                //Loos Coupling
                 //No DI
                 //Boilerplate Code
                 CustomerDAO customerDAO = new CustomerDAOImpl();
@@ -174,7 +174,7 @@ public class ManageCustomersFormController {
                 }
 
                 //Customer update
-                //Tight Coupling
+                //Loos Coupling
                 //No DI
                 //Boilerplate Code
                 CustomerDAO customerDAO  = new CustomerDAOImpl();
@@ -211,7 +211,7 @@ public class ManageCustomersFormController {
                 new Alert(Alert.AlertType.ERROR, "There is no such customer associated with the id " + id).show();
             }
 
-            //Tight Coupling
+            //Loos Coupling
             //No DI
             //Boilerplate Code
             CustomerDAO customerDAO = new CustomerDAOImpl();
@@ -231,7 +231,7 @@ public class ManageCustomersFormController {
     private String generateNewId() {
         try {
 
-            //Tight Coupling
+            //Loos Coupling
             //No DI
             //Boilerplate Code
             CustomerDAO customerDAO  = new CustomerDAOImpl();
