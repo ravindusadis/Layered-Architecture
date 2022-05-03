@@ -72,6 +72,8 @@ public class ManageCustomersFormController {
         /*Get all customers*/
         try {
 
+            //Tight Coupling
+            //No DI
             CustomerDAOImpl customerDAO = new CustomerDAOImpl();
             ArrayList<CustomerDTO> allCustomers = customerDAO.getAllCustomers();
 
@@ -148,6 +150,9 @@ public class ManageCustomersFormController {
                     new Alert(Alert.AlertType.ERROR, id + " already exists").show();
                 }
 
+                //Tight Coupling
+                //No DI
+                //Boilerplate Code
                 CustomerDAOImpl customerDAO = new CustomerDAOImpl();
                 customerDAO.saveCustomer(new CustomerDTO(id, name, address));
 
@@ -167,6 +172,9 @@ public class ManageCustomersFormController {
                 }
 
                 //Customer update
+                //Tight Coupling
+                //No DI
+                //Boilerplate Code
                 CustomerDAOImpl customerDAO = new CustomerDAOImpl();
                 customerDAO.updateCustomer(new CustomerDTO(id, name, address));
 
@@ -201,6 +209,9 @@ public class ManageCustomersFormController {
                 new Alert(Alert.AlertType.ERROR, "There is no such customer associated with the id " + id).show();
             }
 
+            //Tight Coupling
+            //No DI
+            //Boilerplate Code
             CustomerDAOImpl customerDAO = new CustomerDAOImpl();
             customerDAO.deleteCustomer(id);
 
@@ -218,6 +229,9 @@ public class ManageCustomersFormController {
     private String generateNewId() {
         try {
 
+            //Tight Coupling
+            //No DI
+            //Boilerplate Code
             CustomerDAOImpl customerDAO = new CustomerDAOImpl();
             return customerDAO.generateNewID();
 
