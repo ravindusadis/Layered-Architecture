@@ -9,29 +9,30 @@ import java.util.ArrayList;
  * @author : Sanu Vithanage
  * @since : 0.1.0
  **/
-public class OrderDAOImpl implements CustomerDAO{
+public class OrderDAOImpl implements CrudDAO {
+
     @Override
-    public ArrayList<CustomerDTO> getAllCustomers() throws SQLException, ClassNotFoundException {
+    public ArrayList<CustomerDTO> getAll() throws SQLException, ClassNotFoundException {
         return null;
     }
 
     @Override
-    public boolean saveCustomer(CustomerDTO dto) throws SQLException, ClassNotFoundException {
+    public boolean save(CustomerDTO dto) throws SQLException, ClassNotFoundException {
         return false;
     }
 
     @Override
-    public boolean updateCustomer(CustomerDTO dto) throws SQLException, ClassNotFoundException {
+    public boolean update(CustomerDTO dto) throws SQLException, ClassNotFoundException {
         return false;
     }
 
     @Override
-    public boolean existCustomer(String id) throws SQLException, ClassNotFoundException {
+    public boolean exist(String id) throws SQLException, ClassNotFoundException {
         return false;
     }
 
     @Override
-    public boolean deleteCustomer(String id) throws SQLException, ClassNotFoundException {
+    public boolean delete(String id) throws SQLException, ClassNotFoundException {
         return false;
     }
 
