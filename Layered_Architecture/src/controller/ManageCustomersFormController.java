@@ -159,6 +159,7 @@ public class ManageCustomersFormController {
             } catch (SQLException e) {
                 new Alert(Alert.AlertType.ERROR, "Failed to save the customer " + e.getMessage()).show();
                 e.printStackTrace();
+
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
