@@ -55,10 +55,12 @@ public class PlaceOrderFormController {
     public Label lblId;
     public Label lblDate;
     public Label lblTotal;
-    CrudDAO<CustomerDTO, String> customerDAO = new CustomerDAOImpl();
-    CrudDAO<ItemDTO, String> itemDAO = new ItemDAOImpl();
-    CrudDAO<OrderDTO, String> orderDAO = new OrderDAOImpl();
-    CrudDAO<OrderDetailDTO, String> orderDetailsDAO = new OrderDetailsDAOImpl();
+
+    private final CrudDAO<CustomerDTO, String> customerDAO = new CustomerDAOImpl();
+    private final CrudDAO<ItemDTO, String> itemDAO = new ItemDAOImpl();
+    private final CrudDAO<OrderDTO, String> orderDAO = new OrderDAOImpl();
+    private final CrudDAO<OrderDetailDTO, String> orderDetailsDAO = new OrderDetailsDAOImpl();
+
     private String orderId;
 
     public void initialize() throws SQLException, ClassNotFoundException {
