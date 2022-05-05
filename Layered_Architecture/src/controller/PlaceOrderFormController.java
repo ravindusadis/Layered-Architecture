@@ -345,7 +345,7 @@ public class PlaceOrderFormController {
             }
 
             connection.setAutoCommit(false);
-/
+
             //DI
             CrudDAO<OrderDTO,String> orderDAO1 = new OrderDAOImpl();
             boolean save = orderDAO1.save(new OrderDTO(orderId, orderDate, customerId));
