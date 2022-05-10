@@ -3,6 +3,7 @@ package bo;
 import dao.custom.*;
 import dao.custom.impl.*;
 import db.DBConnection;
+import model.CustomerDTO;
 import model.ItemDTO;
 import model.OrderDTO;
 import model.OrderDetailDTO;
@@ -66,6 +67,9 @@ public class PurchaseOrderBOImpl {
         connection.commit();
         connection.setAutoCommit(true);
         return true;
-//        return false;
+    }
+
+    public CustomerDTO searchCustomer(String id) throws SQLException, ClassNotFoundException {
+        return customerDAO.search(id);
     }
 }
