@@ -28,6 +28,7 @@ public class PurchaseOrderBOImpl implements PurchaseOrderBO {
     private final OrderDetailsDAO orderDetailsDAO = (OrderDetailsDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ORDERDETAILS);
     private final QueryDAO queryDAO = (QueryDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.QUERYDAO);
 
+
     //Exposed the object creation logic
     //private final ItemDAO itemDAO = new ItemDAOImpl();
     //private final OrderDAO orderDAO = new OrderDAOImpl();
