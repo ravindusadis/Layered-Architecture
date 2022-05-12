@@ -17,9 +17,28 @@ public class DAOFactory {
         return daoFactory;
     }
 
-    public void test() {
-
+    public enum DAOTypes {
+        CUSTOMER, ITEM, ORDER, ORDERDETAILS, QUERYDAO
     }
+
+    public void getDAO(DAOTypes types) {
+        switch (types) {
+            case CUSTOMER:
+                return;
+            case ITEM:
+                return;
+            case ORDER:
+                return;
+            case QUERYDAO:
+                return;
+            case ORDERDETAILS:
+                return;
+            default:
+                return;
+        }
+    }
+
+
 
 
 }
