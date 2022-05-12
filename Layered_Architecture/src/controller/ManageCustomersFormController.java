@@ -154,7 +154,9 @@ public class ManageCustomersFormController {
                 }
 
                 //Loos Coupling
-                customerDAO.save(new CustomerDTO(id, name, address));
+                //DI
+                CustomerBOImpl customerBO = new CustomerBOImpl();
+                customerBO.saveCustomer(new CustomerDTO(id, name, address));
 
 
                 tblCustomers.getItems().add(new CustomerTM(id, name, address));
@@ -176,8 +178,9 @@ public class ManageCustomersFormController {
 
                 //Customer update
                 //Loos Coupling
-                customerDAO.update(new CustomerDTO(id, name, address));
-
+                //DI
+                CustomerBOImpl customerBO = new CustomerBOImpl();
+                customerBO.updateCustomer(new CustomerDTO(id, name, address));
 
             } catch (SQLException e) {
                 new Alert(Alert.AlertType.ERROR, "Failed to update the customer " + id + e.getMessage()).show();

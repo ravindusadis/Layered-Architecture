@@ -19,6 +19,12 @@ public class CustomerBOImpl {
         return customerDAO.getAll();
     }
 
+    public boolean saveCustomer(CustomerDTO dto) throws SQLException, ClassNotFoundException {
+      return customerDAO.save(dto);
+    }
 
+    public boolean updateCustomer(CustomerDTO dto) throws SQLException, ClassNotFoundException {
+        return customerDAO.update(dto);
+    }
 
 }
