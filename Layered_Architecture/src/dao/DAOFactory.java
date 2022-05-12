@@ -35,9 +35,9 @@ public class DAOFactory {
             case ORDER:
                 return  new OrderDAOImpl(); //SuperDAO superDAO = new OrderDAOImpl();
             case ORDERDETAILS:
-                return new OrderDetailsDAOImpl();
+                return new OrderDetailsDAOImpl(); //SuperDAO superDAO = new OrderDetailsDAOImpl();
             case QUERYDAO:
-                return new QueryDAOImpl();
+                return new QueryDAOImpl(); //SuperDAO superDAO = new QueryDAOImpl();
             default:
                 return null;
         }
