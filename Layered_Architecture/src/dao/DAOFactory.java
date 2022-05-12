@@ -1,7 +1,8 @@
 package dao;
 
 import dao.custom.CustomerDAO;
-import dao.custom.impl.CustomerDAOImpl;
+import dao.custom.ItemDAO;
+import dao.custom.impl.*;
 import model.CustomerDTO;
 
 /**
@@ -28,20 +29,20 @@ public class DAOFactory {
     }
 
     //method for hide the object creation logic and return what client wants
-    public CustomerDAO getDAO(DAOTypes types) {
+    public SuperDAO getDAO(DAOTypes types) {
         switch (types) {
             case CUSTOMER:
                 return new CustomerDAOImpl();
             case ITEM:
-                return;
+                return new ItemDAOImpl();
             case ORDER:
-                return;
-            case QUERYDAO:
-                return;
+                return  new OrderDAOImpl();
             case ORDERDETAILS:
-                return;
+                return new OrderDetailsDAOImpl();
+            case QUERYDAO:
+                return new QueryDAOImpl();
             default:
-                return;
+                return null;
         }
     }
 
