@@ -2,7 +2,7 @@ package dao.custom.impl;
 
 import dao.SQLUtil;
 import dao.custom.ItemDAO;
-import model.ItemDTO;
+import dto.ItemDTO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
