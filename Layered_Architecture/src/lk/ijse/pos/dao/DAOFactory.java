@@ -1,5 +1,4 @@
 package lk.ijse.pos.dao;
-import dao.custom.impl.*;
 import lk.ijse.pos.dao.custom.impl.*;
 
 
