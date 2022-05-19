@@ -12,5 +12,5 @@ import java.util.ArrayList;
  * @since : 0.1.0
  **/
 public interface ItemDAO extends CrudDAO<Item,String> {
-    public ArrayList<ItemDTO> getItemFromPrice(double price)throws ClassNotFoundException, SQLException;
+    public ArrayList<Item> getItemFromPrice(double price)throws ClassNotFoundException, SQLException;
 }

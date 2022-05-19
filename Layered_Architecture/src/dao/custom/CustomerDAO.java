@@ -12,5 +12,5 @@ import java.util.ArrayList;
  * @since : 0.1.0
  **/
 public interface CustomerDAO extends CrudDAO<Customer,String> {
-    public ArrayList<CustomerDTO> getAllCustomersByAddress(String address)throws ClassNotFoundException, SQLException;
+    public ArrayList<Customer> getAllCustomersByAddress(String address)throws ClassNotFoundException, SQLException;
 }
