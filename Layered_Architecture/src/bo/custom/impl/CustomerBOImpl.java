@@ -21,12 +21,17 @@ public class CustomerBOImpl implements CustomerBO {
 
     @Override
     public ArrayList<CustomerDTO> getAllCustomers() throws SQLException, ClassNotFoundException {
-        customerDAO.getAll()
+        ArrayList<Customer> all = customerDAO.getAll();
+        ArrayList<CustomerDTO> allCustomers= new ArrayList<>();
+        for (Customer customer : all) {
+            allCustomers.add(new CustomerDTO(customer.getId(),customer.getName(),customer.getAddress()));
+        }
+        return allCustomers;
     }
 
     @Override
     public boolean saveCustomer(CustomerDTO dto) throws SQLException, ClassNotFoundException {
-        return customerDAO.save(dto);
+        return customerDAO.save(new Customer(dto.getId(),dto.getName(),dto.getAddress()));
     }
 
     @Override
